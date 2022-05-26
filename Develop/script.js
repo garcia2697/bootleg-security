@@ -122,7 +122,7 @@ function generatePassword(){
      var special = prompt("Pick if you want special character elements", "Type Yes or No here");
         
      if (special == "yes" || special == "Yes" || special == "YES"){
-       var spec = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+       var spec = ["{", "|", "}", "~","!", "#", "$", "(", ")", "*", "+", ",", "=", " > ", " ? ", "@","-", ".", "/", " < ", "[", "]", " ^ ", "_", "`", "%", "&", "'", ];
      }
 
      else if (special == "no" || special == "No" || special == "NO")
