@@ -33,24 +33,27 @@ function generatePassword(){
   // Prompts user to pick length of password and saves data
     var keylength = prompt("Pick the length of your password", "Type the length here");
 
-  keylength = parseInt(keylength);
+    keylength = parseInt(keylength);
 
     if (!keylength){
 
-      alert("Add Value")
+      alert("Please Add Numerical Value, Try Again")
+      return;
+
     }
     
     
-    else if (keylength < 8 && keylength > 128)
+    else if (keylength >= 8 && keylength <= 128)
       {
-      alert("This number does not match criteria");
-      console.log("Length is " + keylength);
+      alert("Criteria met");
+      
       }
 
 
-    else
+    else 
       {
-      alert("This does meet criteria");
+      alert("This does not meet criteria, try again");
+      return;
       }
 
 // Selects all the prompts
@@ -70,7 +73,8 @@ function generatePassword(){
      } 
 
      else {
-       alert("Enter yes or no")
+      alert("Please enter yes or no, try again")
+       return;
      }
 
 
@@ -93,7 +97,8 @@ function generatePassword(){
         }
 
         else {
-          alert("Enter yes or no")
+          alert("Please enter yes or no, try again")
+          return;
         }
 
     // make upper case selection
@@ -111,7 +116,8 @@ function generatePassword(){
         }
 
         else {
-          alert("Enter yes or no")
+          alert("Please enter yes or no, try again")
+          return;
         }
 
 
@@ -131,25 +137,26 @@ function generatePassword(){
      } 
 
      else {
-      alert("Enter yes or no")
+      alert("Please enter yes or no, try again")
+      return;
     }
 
 
 
 
- // Bring it all together
+ // Brings all chosen arrays together into an empty array
 
- // Empty variable for the password length
  var Empty = [];
   pass =Empty.concat(num,low,up,spec);
+
  // Loop for random selection
  for (var i = 0; i < keylength; i++) {
-   var allChoices = pass[Math.floor(Math.random() * pass.length)];
-   Empty.push(allChoices);
-   console.log(allChoices);
+   var selections = pass[Math.floor(Math.random() * pass.length)];
+   Empty.push(selections);
+   console.log(selections);
  }
 
- // Join and return the password 
+ // shows password on screen
  var password = Empty.join("");
  console.log("Your Pasword is: " + password);
  return password;
